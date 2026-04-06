@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html
+, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .table-container {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: auto; /* Add scrollbars if content is too large */
+  }
+  
+  table {
+    width: 100%; /* Table spans container width */
+    height: 100%; /* Table spans container height */
+    table-layout: fixed; /* Ensures proportional resizing */
+    border-collapse: collapse;
+  }
+  
+  td, th {
+    border: 1px solid black;
+    /* Text will wrap or shrink depending on content */
+    word-wrap: break-word;
+  }

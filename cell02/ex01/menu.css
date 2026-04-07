@@ -1,0 +1,48 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.sandwich-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+select#sandwich-menu {
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #fafafa;
+    font-size: 16px;
+    color: #555;
+    /* Visual representation of a sandwich */
+    border-color: #e0b070; /* Bun color */
+}
+
+/* Styling options to look like ingredients */
+option[value="top-bun"], option[value="bottom-bun"] {
+    background-color: #e0b070; /* Bun color */
+    font-weight: bold;
+}
+
+option[value="ham"] {
+    background-color: #ff9999; /* Ham color */
+}
+
+option[value="cheese"] {
+    background-color: #ffdb58; /* Cheese color */
+}

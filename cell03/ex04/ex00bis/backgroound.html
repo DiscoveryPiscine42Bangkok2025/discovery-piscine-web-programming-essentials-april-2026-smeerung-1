@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="backgroound.css">
+</head>
+<body>
+    <div class="box">
+        <button id="demo" type="button" onclick="document.getElementById('demo').onclick = Date()">
+            test clickme 
+        </button>
+    </div>
+
+
+    <script>
+        document.getElementById('demo').onclick = function(){myFunction()};
+        function myFunction() {
+            const r = Math.floor(Math.random()*256);
+            const g = Math.floor(Math.random()*256);
+            const b = Math.floor(Math.random()*256);
+            console.log("g]]]")
+
+            const box = document.querySelector('.box')
+            box.style.backgroundColor = `rgb(${r},${g},${b})`;
+        }
+    </script>
+</body>
+</html>

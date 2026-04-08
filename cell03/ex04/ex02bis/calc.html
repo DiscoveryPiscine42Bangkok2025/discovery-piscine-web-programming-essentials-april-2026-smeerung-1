@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+    <link rel="stylesheet" href="calc.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <form>
+        <label for="fname">Calculate:</label><br>
+        <input type="number" id="fname" name="fname"><br>
+    </form>
+    <hr>
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <hr>
+    <form>
+        <input type="number" id="lname" name="lname"><br>
+        <hr>
+        <button type="button" id="submitBtn">submit</button>
+    </form>
+    <script>
+        $(document).ready(function() {
+            $("#submitBtn").click(function() {
+                const fnumx = parseFloat($("#fname").val());
+                const lnumx = parseFloat($("#lname").val());
+                const operator = $("#operator").val();
+
+                let result;
+
+                switch (operator) {
+                    case "+":
+                        result = fnumx + lnumx;
+                        break;
+                    case "-":
+                        result = fnumx - lnumx;
+                        break;
+                    case "*":
+                        result = fnumx * lnumx;
+                        break;
+                    case "/":
+                        if (lnumx === 0) {
+                            alert("Cannot divide by zero!");
+                            return;
+                        }
+                        result = fnumx / lnumx;
+                        break;
+                    case "%":
+                        result = fnumx % lnumx;
+                        break;
+                    default:
+                        alert("Invalid operator");
+                        return;
+                }
+
+                alert("Result: " + result);
+            });
+        });
+    </script>
+</body>
+
+</html>

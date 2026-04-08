@@ -1,0 +1,88 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+}
+
+.card-container {
+    text-align: center;
+    width: 100%;
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.info-table {
+    display: table;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.row {
+    display: table-row;
+}
+
+.login {
+    display: table-cell;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 5px 0;
+}
+
+.description, .location {
+    display: table-cell;
+    font-size: 0.9em;
+    color: #666;
+    padding: 2px 0;
+}
+
+.social-icons {
+    display: table-cell;
+    padding-top: 10px;
+}
+
+.social-icons img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+}
+
+.contact-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.contact-btn:hover {
+    background-color: #0056b3;
+}

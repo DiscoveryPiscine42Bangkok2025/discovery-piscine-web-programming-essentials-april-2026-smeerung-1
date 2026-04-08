@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Balloon</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* The Balloon Styling */
+        #balloon {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%; /* Makes it a perfect circle */
+            cursor: pointer;
+            transition: background-color 0.3s, width 0.1s, height 0.1s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="balloon"></div>
+
+    <script>
+        const balloon = document.getElementById('balloon');
+        const colors = ['red', 'green', 'blue'];
+        
+        let currentSize = 200;
+        let colorIndex = 0;
+
+        // Function to update the balloon's appearance
+        function updateBalloon() {
+            balloon.style.width = currentSize + 'px';
+            balloon.style.height = currentSize + 'px';
+            balloon.style.backgroundColor = colors[colorIndex];
+        }
+
+        // Click Event: Grow and cycle color forward
+        balloon.addEventListener('click', () => {
+            currentSize += 10;
+            
+            if (currentSize > 420) {
+                // Explode! Reset to original
+                currentSize = 200;
+                colorIndex = 0;
+            } else {
+                // Move forward in color array: 0 -> 1 -> 2 -> 0...
+                colorIndex = (colorIndex + 1) % colors.length;
+            }
+            
+            updateBalloon();
+        });
+
+        // Mouse Leave Event: Shrink and cycle color backward
+        balloon.addEventListener('mouseleave', () => {
+            // Shrink by 5px, but don't go below 200px
+            if (currentSize > 200) {
+                currentSize -= 5;
+                
+                // Move backward in color array: 0 -> 2 -> 1 -> 0...
+                colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+            }
+            
+            updateBalloon();
+        });
+    </script>
+</body>
+</html>
